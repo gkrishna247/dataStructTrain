@@ -1,1 +1,2 @@
 notes
+ to run file in c command >>> .\file.exe
