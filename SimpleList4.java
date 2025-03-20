@@ -6,16 +6,21 @@ class Node
     Node next;
 }
 
-class SimpleList3
+class SimpleList4
 {
     public static void insert(Node head)
     {
         Node ob=new Node();
+        Node temp = head;
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the roll number: ");
         ob.roll = sc.nextInt();
-        ob.next = head.next;
-        head.next = ob;
+        while(temp.next != null)
+        {
+            temp = temp.next;
+        }
+        temp.next = ob;
+        ob.next = null;
     }
 
     public static void display(Node head)
