@@ -41,7 +41,6 @@ class ListDelete
             if(temp.next.roll == val)
             {
                 temp.next = temp.next.next;
-                return;
             }
             temp = temp.next;
         }
