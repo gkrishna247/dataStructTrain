@@ -24,8 +24,8 @@ class ListPrint
 
     public static void display(Node head)
     {
-        Node temp = head;
-        while(temp.next != null)
+        Node temp = head.next;
+        while(temp != null)
         {
             System.out.print(temp.roll + " ");
             temp = temp.next;
@@ -36,15 +36,17 @@ class ListPrint
     public static void printAlternate(Node head)
     {
         Node temp = head.next;
-        int i = 0;
-        while(temp.next != null)
+        while(temp != null)
         {
-            if(i%2 == 0)
+            System.out.print(temp.roll + " ");
+            if(temp.next != null)
             {
-                System.out.print(temp.roll + " ");
+                temp = temp.next.next;
             }
-            i++;
-            temp = temp.next;
+            else
+            {
+                break;
+            }
         }
     }
 
