@@ -35,9 +35,9 @@ class ListCount
 
     public static void lengthOf(Node head)
     {
-        Node temp = head.next;
+        Node temp = head;
         int count = 0;
-        while(temp != null)
+        while(temp.next != null)
         {
             count++;
             temp = temp.next;

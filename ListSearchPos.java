@@ -6,7 +6,7 @@ class Node
     Node next;
 }
 
-class ListSearch
+class ListSearchPos
 {
     public static void insert(Node head, Scanner sc)
     {
@@ -33,25 +33,20 @@ class ListSearch
         
     }
 
-    public static void search(Node head, Scanner sc)
+    public static int search(Node head, int val)
     {
-        Node temp = head;
-        System.out.print("Enter the roll number to search: ");
-        int val = sc.nextInt();
+        Node temp = head.next;
         int pos = 0;
-        while((temp.next != null) && (temp.roll != val))
+        while(temp != null)
         {
             pos++;
+            if(temp.roll == val)
+            {
+                return pos;
+            }
             temp = temp.next;
         }
-        if(temp.roll == val)
-        {
-            System.out.println("Element found at position: " + pos);
-        }
-        else
-        {
-            System.out.println("Element not found");
-        }
+        return -1;
     }
 
     public static void main(String[] args)
@@ -67,7 +62,18 @@ class ListSearch
         }
         display(head);
         System.out.println();
-        search(head,sc);
+        System.out.print("Enter the value of k: ");
+        int k = sc.nextInt();
+        int pos = search(head,k);
+        if(pos == -1)
+        {
+            System.out.println("k not found");
+        }
+        else
+        {
+            System.out.println("k found at position: " + pos);
+        }
+        
 
         sc.close();
     }
