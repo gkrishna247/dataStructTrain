@@ -1,13 +1,58 @@
 import java.util.Scanner;
 
-public class Test {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the n1: ");
-        int n1 = sc.nextInt();
-        System.out.println("Enter the n2: ");
-        int n2 = sc.nextInt();
-        sc.close();
-        System.out.println("n1: " + n1 + " n2: " + n2);
-    }
+class Node
+{
+    int roll;
+    Node next;
 }
+
+class Test
+{
+    public static void insert(Node head, Scanner sc)
+    {
+        Node ob=new Node();
+        Node temp = head;
+        System.out.print("Enter the roll number: ");
+        ob.roll = sc.nextInt();
+        while(temp.next != null)
+        {
+            temp = temp.next;
+        }
+        temp.next = ob;
+        ob.next = null;
+    }
+
+    public static void display(Node head)
+    {
+        Node temp = head.next;
+        while(temp != null)
+        {
+            System.out.print(temp.roll + " ");
+            temp = temp.next;
+        }
+        
+    }
+
+    public static void main(String[] args)
+    {
+        Node head = new Node();
+        head.next = null;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the n: ");
+        int n = sc.nextInt();
+        for(int i=0; i<n; i++)
+        {
+            insert(head,sc);
+        }
+        display(head);
+        System.out.println("Head before null:"+head);
+    
+        System.out.println();
+        head = null;
+        System.out.println("Head after null:"+head);
+        display(head);
+
+        sc.close();
+    
+    }
+} 
