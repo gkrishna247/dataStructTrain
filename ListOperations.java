@@ -7,100 +7,100 @@ class LNode {
 
 public class ListOperations {
 
-    public static void insert(LNode head,int pos,int val){
-        LNode temp=head;
-        LNode obj=new LNode();
-        obj.data=val;
-        int c=0;
-        while(temp.next!=null && pos-1!=c){
-            temp=temp.next;
+    public static void insert(LNode head, int pos, int val) {
+        LNode temp = head;
+        LNode obj = new LNode();
+        obj.data = val;
+        int c = 0;
+        while (temp.next != null && pos - 1 != c) {
+            temp = temp.next;
             c++;
         }
-        if(c==pos-1){
-            obj.next=temp.next;
-            temp.next=obj;
-        }else{
-            System.out.println("Position exists the length of the list");
+        if (c == pos - 1) {
+            obj.next = temp.next;
+            temp.next = obj;
+        } else {
+            System.out.println("Position exceeds the length of the list");
         }
     }
 
-    public static void display(LNode head){
-        LNode temp=head;
+    public static void display(LNode head) {
+        LNode temp = head;
         System.out.print("List is: ");
-        while(temp.next!=null){
-            temp=temp.next;
-            System.out.print(temp.data+" ");
+        while (temp.next != null) {
+            temp = temp.next;
+            System.out.print(temp.data + " ");
         }
         System.out.println();
-        }
+    }
 
     public static int sumOfElements(LNode head) {
-        LNode temp=head;
-        int s=0;
-        while(temp.next!=null){
-            temp=temp.next;
-            s+=temp.data;
+        LNode temp = head;
+        int s = 0;
+        while (temp.next != null) {
+            temp = temp.next;
+            s += temp.data;
         }
         return s;
 
     }
 
-    public static int sumOfOdd(LNode head){
-        LNode temp=head;
-        int so=0;
-        while(temp.next!=null){
-            temp=temp.next;
-            if(temp.data%2!=0){
-                so+=temp.data;
+    public static int sumOfOdd(LNode head) {
+        LNode temp = head;
+        int so = 0;
+        while (temp.next != null) {
+            temp = temp.next;
+            if (temp.data % 2 != 0) {
+                so += temp.data;
             }
         }
         return so;
 
     }
 
-    public static int sumOfEven(LNode head){
-        LNode temp=head;
-        int se=0;
-        while (temp.next!=null){
-            temp=temp.next;
-            if(temp.data%2 ==0){
-                se+=temp.data;
+    public static int sumOfEven(LNode head) {
+        LNode temp = head;
+        int se = 0;
+        while (temp.next != null) {
+            temp = temp.next;
+            if (temp.data % 2 == 0) {
+                se += temp.data;
             }
         }
         return se;
     }
 
-    public static int noOfOdd(LNode head){
-        LNode temp=head;
-        int c=0;
-        while(temp.next!=null){
-            temp=temp.next;
-            if (temp.data%2 !=0){
+    public static int noOfOdd(LNode head) {
+        LNode temp = head;
+        int c = 0;
+        while (temp.next != null) {
+            temp = temp.next;
+            if (temp.data % 2 != 0) {
                 c++;
             }
         }
         return c;
     }
 
-    public static int noOfEven(LNode head){
-        LNode temp=head;
-        int c=0;
-        while(temp.next!=null){
-            temp=temp.next;
-            if(temp.data%2 ==0){
+    public static int noOfEven(LNode head) {
+        LNode temp = head;
+        int c = 0;
+        while (temp.next != null) {
+            temp = temp.next;
+            if (temp.data % 2 == 0) {
                 c++;
             }
         }
         return c;
     }
 
-    public static void printAlternate(LNode head){
-        LNode temp=head;
-        int c=0;
-        while(temp.next!=null){
-            temp=temp.next;
-            if (c%2==0){
-                System.out.print(temp.data+" ");
+    public static void printAlternate(LNode head) {
+        LNode temp = head;
+        int c = 0;
+        while (temp.next != null) {
+            temp = temp.next;
+            if (c % 2 == 0) {
+                System.out.print(temp.data + " ");
             }
             c++;
         }
@@ -108,52 +108,75 @@ public class ListOperations {
 
     }
 
-    public static int min(LNode head){
-        LNode temp=head;
-        int mi=-1;
-        if(temp.next!=null){
-            temp=temp.next;
-            mi=temp.data;
-            while(temp.next!=null){
-                temp=temp.next;
-                if(mi>temp.data){
-                    mi=temp.data;
+    public static int min(LNode head) {
+        LNode temp = head;
+        int mi = -1;
+        if (temp.next != null) {
+            temp = temp.next;
+            mi = temp.data;
+            while (temp.next != null) {
+                temp = temp.next;
+                if (mi > temp.data) {
+                    mi = temp.data;
                 }
             }
         }
         return mi;
     }
 
-    public static int max(LNode head){
-        LNode temp=head;
-        int ma=-1;
-        if(temp.next!=null){
-            temp=temp.next;
-            ma=temp.data;
-            while (temp.next!=null){
-                temp=temp.next;
-                if(ma<temp.data){
-                    ma=temp.data;
+    public static int max(LNode head) {
+        LNode temp = head;
+        int ma = -1;
+        if (temp.next != null) {
+            temp = temp.next;
+            ma = temp.data;
+            while (temp.next != null) {
+                temp = temp.next;
+                if (ma < temp.data) {
+                    ma = temp.data;
                 }
             }
         }
         return ma;
     }
 
-    public static void findnth(LNode head,int pos){
-        LNode temp=head.next;
-        int n=0;
-        while(temp!=null && n!=pos-1){
-            temp=temp.next;
+    public static void findnth(LNode head, int pos) {
+        LNode temp = head;
+        int n = 0;
+        while (temp.next != null && n != pos) {
+            temp = temp.next;
             n++;
         }
-        if(n==pos){
-            System.out.println("The nth element in the list is: "+temp.data);
-        }else{
-            System.out.println("The given postion is not bound");
+        if (n == pos) {
+            System.out.println("The nth element in the list is: " + temp.data);
+        } else {
+            System.out.println("The given position is out of bounds");
         }
     }
-    
+
+    public static void checkDuplicates(LNode head){
+        LNode temp=head;
+        int c=1;
+        while (temp.next!=null){
+            temp=temp.next;
+            LNode ctemp=head;
+            c=0;
+            while(ctemp.next!=null){
+                ctemp=ctemp.next;
+                if (temp.data == ctemp.data){
+                    c++;
+                }
+            }
+            if(c>1){
+                System.out.println("Duplicates found");
+                break;
+            }
+        }
+        if(c==1){
+            System.out.println("No duplicates found");
+        }
+    }
+
 
     public static void main(String[] args) {
         LNode head = new LNode();
@@ -161,22 +184,27 @@ public class ListOperations {
         Scanner sc = new Scanner(System.in);
         int noe = sc.nextInt();
         for (int i = 0; i < noe; i++) {
-            insert(head,i+1,sc.nextInt());
+            insert(head, i + 1, sc.nextInt());
         }
         display(head);
-        System.out.println("Sum of list is: "+sumOfElements(head));
-        System.out.println("Sum of odd elements in list: "+sumOfOdd(head));
-        System.out.println("Sum of even elements in list: "+sumOfEven(head));
-        System.out.println("Number of odd elements: "+noOfOdd(head));
-        System.out.println("Number of even elements: "+noOfEven(head));
+        System.out.println("Sum of list is: " + sumOfElements(head));
+        System.out.println("Sum of odd elements in list: " + sumOfOdd(head));
+        System.out.println("Sum of even elements in list: " + sumOfEven(head));
+        System.out.println("Number of odd elements: " + noOfOdd(head));
+        System.out.println("Number of even elements: " + noOfEven(head));
         System.out.println("The altenate elements are: ");
         printAlternate(head);
-        System.out.println("The min element in list is: "+min(head));
-        System.out.println("The max element in list is: "+max(head));
-        System.out.print("Enter valur of n to print nth element: ");
-        int n=sc.nextInt();
-        findnth(head,n);
+        System.out.println("The min element in list is: " + min(head));
+        System.out.println("The max element in list is: " + max(head));
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter value of n to print nth element: ");
+            int n = sc.nextInt();
+            findnth(head, n);
+        }
+        System.out.println();
+        checkDuplicates(head);
+
         sc.close();
     }
-    
+
 }
