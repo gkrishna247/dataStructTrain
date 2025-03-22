@@ -43,9 +43,7 @@ class StackSimple{
         }
     }
 
-    public static void isFull(SNode head){
-        s
-    }
+
 
     public static void isEmpty(SNode head){
         if(head.next==null){
@@ -76,8 +74,16 @@ class StackSimple{
         for(int i=0;i<n;i++){
             push(head,sc);
         }
+        System.out.println("peek: ");
         peek(head);
+        System.out.println("pop: ");
+        pop(head);
+        System.out.println("isEmpty: ");
+        isEmpty(head);
+        System.out.println("size: ");
+        size(head);
         display(head);
+        sc.close();
 
     }
 }
