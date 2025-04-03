@@ -8,10 +8,9 @@ class Node
 
 class SimpleList3
 {
-    public static void insert(Node head)
+    public static void insert(Node head, Scanner sc)
     {
         Node ob=new Node();
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the roll number: ");
         ob.roll = sc.nextInt();
         ob.next = head.next;
@@ -43,18 +42,18 @@ class SimpleList3
     {
         Node head = new Node();
         head.next = null;
-        Scanner sc1 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the n: ");
-        int n = sc1.nextInt();
+        int n = sc.nextInt();
         for(int i=0; i<n; i++)
         {
-            insert(head);
+            insert(head, sc);
         }
         display(head);
         System.out.println();
         System.out.println("Sum : " + sum(head));
         System.out.println("Average : " + sum(head)/n);
 
-        sc1.close();
+        sc.close();
     }
 } 
