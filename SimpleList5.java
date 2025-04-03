@@ -8,11 +8,10 @@ class Node
 
 class SimpleList5
 {
-    public static void insert(Node head)
+    public static void insert(Node head,Scanner sc)
     {
         Node ob=new Node();
         Node temp = head;
-        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the roll number: ");
         ob.roll = sc.nextInt();
         while(temp.next != null)
@@ -23,7 +22,7 @@ class SimpleList5
         ob.next = null;
     }
 
-    public static void insertat(Node head, int pos)
+    public static void insertat(Node head, Scanner sc,int pos)
     {
         int c=0;
         Node p = head;
@@ -35,7 +34,6 @@ class SimpleList5
         if(pos-1 == c)
         {
             Node ob = new Node();
-            Scanner sc = new Scanner(System.in);
             System.out.print("Enter the roll number: ");
             ob.roll = sc.nextInt();
             ob.next = p.next;
@@ -61,20 +59,20 @@ class SimpleList5
     {
         Node head = new Node();
         head.next = null;
-        Scanner sc1 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the n: ");
-        int n = sc1.nextInt();
+        int n = sc.nextInt();
         for(int i=0; i<n; i++)
         {
-            insert(head);
+            insert(head,sc);
         }
         display(head);
         System.out.println();
         System.out.println("Enter the position to insert: ");
-        int pos = sc1.nextInt();
-        insertat(head, pos);
+        int pos = sc.nextInt();
+        insertat(head, sc, pos);
         display(head);
 
-        sc1.close();
+        sc.close();
     }
 } 
