@@ -8,11 +8,10 @@ class Node
 
 class SimpleList4
 {
-    public static void insert(Node head)
+    public static void insert(Node head,Scanner sc)
     {
         Node ob=new Node();
         Node temp = head;
-        Scanner sc = new Scanner(System.in);
         //System.out.print("Enter the roll number: ");
         ob.roll = sc.nextInt();
         while(temp.next != null)
@@ -38,16 +37,16 @@ class SimpleList4
     {
         Node head = new Node();
         head.next = null;
-        Scanner sc1 = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the n: ");
-        int n = sc1.nextInt();
+        int n = sc.nextInt();
         for(int i=0; i<n; i++)
         {
-            insert(head);
+            insert(head,sc);
         }
         display(head);
         System.out.println();
 
-        sc1.close();
+        sc.close();
     }
 } 
