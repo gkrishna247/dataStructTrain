@@ -46,7 +46,6 @@ class Test
         }
         display(head);
         System.out.println("Head before null:"+head);
-    
         System.out.println();
         head = null;
         System.out.println("Head after null:"+head);
