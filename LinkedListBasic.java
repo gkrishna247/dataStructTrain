@@ -86,7 +86,7 @@ public class LinkedListBasic {
         }
         for(int i=0;i<3;i++){
             deleteUserInput(head, sc);
-            System.out.print("The array after deletion (user input): ");
+            System.out.print("The array after deletion: ");
             display(head);
         }
         for(int i=0;i<3;i++){
