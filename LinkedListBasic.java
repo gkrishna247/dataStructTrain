@@ -66,6 +66,21 @@ public class LinkedListBasic {
             System.out.println("Invalid Position: "+pos);
         }
     }
+    public static void reverse(Node head) {
+        if (head.next == null || head.next.next == null) {
+            System.out.println("List is already reversed or empty.");
+            return;
+        }
+        Node prev = null;
+        Node current = head.next;
+        while (current != null) {
+            Node next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head.next = prev;
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         Node head=new Node();
@@ -76,6 +91,8 @@ public class LinkedListBasic {
             insertAtEnd(head, sc);
         }
         System.out.print("The intial list: ");
+        display(head);
+        reverse(head);
         display(head);
         for(int i=0;i<3;i++){
             System.out.print("Enter position to insert: ");
