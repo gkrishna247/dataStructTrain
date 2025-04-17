@@ -1,5 +1,7 @@
 public class Jhello {
     public static void main(String[] args) {
-        System.out.println(10^3);
-    }
+        for(int i=0;i<26;i++){
+            System.out.println( (char)(i+'A') );
+        }
+        }
 }
