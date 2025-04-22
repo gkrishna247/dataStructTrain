@@ -19,8 +19,21 @@ public class ArrayListex01 {
         }
         System.out.println();
         System.out.println("Size of the ArrayList: " + iarr.size());
-
-
+        // insert at index
+        iarr.add(5,55);
+        System.out.println("After inserting 55 at index 5:");
+        for(int i=0;i<iarr.size();i++){
+            System.out.print(iarr.get(i)+" ");
+        }
+        System.out.println();
+        System.out.println("Size of the ArrayList: " + iarr.size());
+        // updateing value
+        iarr.set(5,56);
+        System.out.println("Array after updating the element at index 5:");
+        for(int i=0;i<iarr.size();i++){
+            System.out.print(iarr.get(i)+" ");
+        }
+        System.out.println();
 
     }
 }
