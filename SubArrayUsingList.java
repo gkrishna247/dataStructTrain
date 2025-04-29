@@ -30,6 +30,19 @@ public class SubArrayUsingList {
             }
         }
     }
+    public static void printSub1(int arr[], int n, int s, int e, ArrayList<Integer> sa) {
+        if (s == n) {
+            return;
+        }
+        if (e == n) {
+            sa.clear();
+            printSub1(arr, n, s + 1, s + 1, sa);
+            return;
+        }
+        sa.add(arr[e]);
+        System.out.println(sa);
+        printSub1(arr, n, s, e + 1, sa);
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
@@ -37,8 +50,9 @@ public class SubArrayUsingList {
         for(int i=0;i<n;i++){
             a[i]=sc.nextInt();
         }
-        // printSub(a, n);
-        // printSubUseIndex(a, n, 0,0);
+        printSub(a, n);
+        printSubUseIndex(a, n, 0, 0);
+        printSub1(a, n, 0, 0, new ArrayList<>());
 
         sc.close();
     }
